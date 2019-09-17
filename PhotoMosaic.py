@@ -9,7 +9,10 @@ def main():
     while True:
         main_image_loc = input("Enter the path of the main image in your computer: ")
         try:
-            main_image = Image.open(main_image_loc)
+            if main_image_loc == "":
+                continue
+            else:
+                main_image = Image.open(main_image_loc)
         except FileNotFoundError:
             print("\nFileNotFoundError: No such file or directory '" + main_image_loc + "'")
         except OSError:
@@ -39,21 +42,22 @@ def main():
 
     tile_size = int(max(main_image.width, main_image.height) / num_of_tiles)
 
-    no_entry = True
+    # no_entry = True
+    # repeat = True
+    # while no_entry:
+    #     repeat = input("Would you like images to be repeated in your photomosaic? If no, the number of tiles requested "
+    #                    "must match the number of tile images given. ('Yes' or 'No'): ")
+    #     if repeat.lower() == 'yes':
+    #         repeat = True
+    #         no_entry = False
+    #     elif repeat.lower() == 'no':
+    #         repeat = False
+    #         no_entry = False
+    #     else: 
+    #         repeat = None
+    #         no_entry = True
+    #         print("\nPlease enter 'Yes' or 'No'!")
     repeat = True
-    while no_entry:
-        repeat = input("Would you like images to be repeated in your photomosaic? If no, the number of tiles requested "
-                       "must match the number of tile images given. ('Yes' or 'No'): ")
-        if repeat.lower() == 'yes':
-            repeat = True
-            no_entry = False
-        elif repeat.lower() == 'no':
-            repeat = False
-            no_entry = False
-        else: 
-            repeat = None
-            no_entry = True
-            print("\nPlease enter 'Yes' or 'No'!")
 
     main_image_grid = split_main_image(main_image, tile_size)
     main_image_rgb_grid = generate_rgb_grid(main_image_grid)

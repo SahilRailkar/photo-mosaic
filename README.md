@@ -1,6 +1,7 @@
 # photo-mosaic
 A Python module for creating photo mosaics.
 
+
 ## Installation
 Use the package manager to install dependencies.
 
@@ -16,6 +17,7 @@ python3 PhotoMosaic.py
 
 ## Built With
 * [Pillow](https://pillow.readthedocs.io/en/stable/) – Python Imaging Library
+
 
 ## Roadmap
 * Fix issues with a large number of construction tiles

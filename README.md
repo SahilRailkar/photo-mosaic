@@ -9,7 +9,7 @@ Use the package manager to install dependencies.
 pip install -r requirements.txt
 ```
 
-## Deployment
+## Usage
 Use the following command to begin creating your photo mosaic.
 ```bash
 python3 PhotoMosaic.py
